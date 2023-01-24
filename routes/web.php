@@ -10,6 +10,7 @@ Route::get('/', function () {
 
 
 Route::get('/test', [TestController::class, 'index'])->name('test.index');
+Route::get('/add', [TestController::class, 'add'])->name('test.add');
 
 Route::middleware([
     'auth:sanctum',

@@ -11,13 +11,22 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/flatpickr.js'])
+
     <!-- Styles -->
     @livewireStyles
 </head>
 
-<body>
+<body x-data="{'isModalOpen': false}" x-on:keydown.escape="isModalOpen=false">
+    <!-- Page Heading -->
+    @if (isset($header))
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                {{ $header }}
+            </div>
+        </header>
+    @endif
+
     <div class="font-sans text-gray-900 antialiased">
         {{ $slot }}
     </div>

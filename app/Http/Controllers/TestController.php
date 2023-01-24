@@ -17,6 +17,11 @@ class TestController extends Controller
         return view('test.test');
     }
 
+    public function add()
+    {
+        return view('test.add');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
